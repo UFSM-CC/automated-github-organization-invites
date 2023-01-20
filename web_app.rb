@@ -3,6 +3,8 @@ require 'bundler/setup'
 require 'sinatra'
 require 'slim'
 require 'octokit'
+require 'dotenv/load'
+
 
 TOKEN = ENV['GITHUB_TOKEN']
 ORG_NAME = ENV['ORGANIZATION_NAME']
@@ -101,6 +103,10 @@ avatar = get_org_avatar_url(client)
 org_id = get_org_id(client)
 
 l = Slim::Template.new { @layout }
+
+set :bind, '0.0.0.0'
+set :port, 2210
+
 
 # ROUTES #
 
