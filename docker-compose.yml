@@ -5,7 +5,5 @@ services:
       context: .
       dockerfile: Dockerfile
     working_dir: /var/prog
-    volumes:
-      - './:/var/prog'
     ports:
       - 2210:2210
